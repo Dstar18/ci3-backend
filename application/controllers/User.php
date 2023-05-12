@@ -8,14 +8,17 @@ class User extends MY_Controller{
         $this->load->model(['User_model']);
     }
 
-    public function list_get(){
+    public function lists_get(){
         $result = $this->User_model->gets();
-        $this->response($result);
+        $this->response($result, 200);
     }
 
-    public function listget_get($id=false){
+    public function list_get($id=false){
         $result = $this->User_model->get($id);
-        $this->response($result);
+        if(isset($result->error)){
+            $this->response($result, 404);    
+        }
+        $this->response($result, 200);
     }
 
     public function insert_post(){
@@ -26,7 +29,10 @@ class User extends MY_Controller{
         }else{
             $post = $this->input->post(null, TRUE);
             $result = $this->User_model->insert($post);
-            $this->response($result);
+            if(isset($result->error)){
+                $this->response($result, 500);
+            }
+            $this->response($result, 200);
         }
     }
 
@@ -38,13 +44,19 @@ class User extends MY_Controller{
         }else{
             $post = $this->input->post(null, TRUE);
             $result = $this->User_model->update($post);
+            if(isset($result->error)){
+                $this->response($result, 404);
+            }
             $this->response($result);
         }
     }
 
     public function delete_delete($id=false){
         $result = $this->User_model->delete($id);
-        $this->response($result);
+        if(isset($result->error)){
+            $this->response($result, 404);
+        }
+        $this->response($result, 200);
     }
     
 }
