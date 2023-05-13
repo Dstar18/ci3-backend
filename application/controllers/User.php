@@ -24,15 +24,15 @@ class User extends MY_Controller{
     public function insert_post(){
         if($this->form_validation->run('user/insert') == FALSE){
             $result = $this->validation_errors();
-            // $error = implode(" ", $result); /*Jika mau dijadikan string*/
-            $this->response($result);
+            $error['error'] = implode(" ", $result); /*Jika mau dijadikan string*/
+            $this->response($error, 500);
         }else{
             $post = $this->input->post(null, TRUE);
             $result = $this->User_model->insert($post);
             if(isset($result->error)){
                 $this->response($result, 500);
             }
-            $this->response($result, 200);
+            $this->response($result, 201);
         }
     }
 
@@ -47,7 +47,7 @@ class User extends MY_Controller{
             if(isset($result->error)){
                 $this->response($result, 404);
             }
-            $this->response($result);
+            $this->response($result, 200);
         }
     }
 
