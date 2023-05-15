@@ -5,7 +5,7 @@ $config = array(
     'user/insert'   => array(
         array(
             'field'     => 'role_id',
-            'label'     => 'role ID',
+            'label'     => 'role',
             'rules'     => 'required'
         ),
         array(
@@ -43,7 +43,7 @@ $config = array(
         ),
         array(
             'field'     => 'role_id',
-            'label'     => 'role ID',
+            'label'     => 'role',
             'rules'     => 'required'
         ),
         array(
