@@ -7,11 +7,11 @@ Program sederhana codeginiter 3 restfull API bagian back-end
 *******************
 Link Information
 *******************
-http://{IP-server}/ci3-backend/user/lists
-http://{IP-server}/ci3-backend/user/list/{ID}
-http://{IP-server}/ci3-backend/user/insert
-http://{IP-server}/ci3-backend/user/update
-http://{IP-server}/ci3-backend/user/delete/{ID}
+- http://{IP-server}/ci3-backend/user/lists
+- http://{IP-server}/ci3-backend/user/list/{ID}
+- http://{IP-server}/ci3-backend/user/insert
+- http://{IP-server}/ci3-backend/user/update
+- http://{IP-server}/ci3-backend/user/delete/{ID}
 **************************
 Changelog and New Features
 **************************
