@@ -24,8 +24,8 @@ class User extends MY_Controller{
     public function insert_post(){
         if($this->form_validation->run('user/insert') == FALSE){
             $result = $this->validation_errors();
-            $error['error'] = implode(" ", $result); /*Jika mau dijadikan string*/
-            $this->response($error, 500);
+            $message['error'] = implode(" ", $result);
+            $this->response($message, 500);
         }else{
             $post = $this->input->post(null, TRUE);
             $result = $this->User_model->insert($post);
@@ -39,8 +39,8 @@ class User extends MY_Controller{
     public function update_post(){
         if($this->form_validation->run('user/update') == FALSE){
             $result = $this->validation_errors();
-            // $error = implode(" ", $result); /*Jika mau dijadikan string*/
-            $this->response($result);
+            $message['error'] = implode(" ", $result);
+            $this->response($message, 500);
         }else{
             $post = $this->input->post(null, TRUE);
             $result = $this->User_model->update($post);

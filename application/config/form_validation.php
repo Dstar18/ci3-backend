@@ -21,12 +21,12 @@ $config = array(
         array(
             'field'     => 'firstname',
             'label'     => 'Firstname',
-            'rules'     => 'required|max_length[100]'
+            'rules'     => 'required|min_length[3]|max_length[20]'
         ),
         array(
             'field'     => 'lastname',
             'label'     => 'Lastname',
-            'rules'     => 'required|max_length[100]'
+            'rules'     => 'required|min_length[3]|max_length[20]'
         ),
         array(
             'field'     => 'password',
@@ -59,12 +59,12 @@ $config = array(
         array(
             'field'     => 'firstname',
             'label'     => 'Firstname',
-            'rules'     => 'required|max_length[100]'
+            'rules'     => 'required|min_length[3]|max_length[20]'
         ),
         array(
             'field'     => 'lastname',
             'label'     => 'Lastname',
-            'rules'     => 'required|max_length[100]'
+            'rules'     => 'required|min_length[3]|max_length[20]'
         ),
         array(
             'field'     => 'password',

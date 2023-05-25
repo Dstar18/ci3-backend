@@ -32,7 +32,7 @@ class User_model extends CI_Model{
             'email'         => $post['email'],
             'firstname'     => $post['firstname'],
             'lastname'      => $post['lastname'],
-            'password'      => md5($post['password']),
+            'password'      => $post['password'],
             'created_at'    => date('Y-m-d H:i:sa')
         );
         $cekNIP = $this->db->where('nip', $data['nip'])->get('tb_user');
@@ -56,7 +56,7 @@ class User_model extends CI_Model{
             'email'         => $post['email'],
             'firstname'     => $post['firstname'],
             'lastname'      => $post['lastname'],
-            'password'      => md5($post['password']),
+            'password'      => $post['password'],
             'update_at'     => date('Y-m-d H:i:sa')
         );
         $cekID  = $this->db->where('iduser', $data['iduser'])->get('tb_user');
@@ -67,7 +67,7 @@ class User_model extends CI_Model{
             ]);
         }else{
             return to_obj([
-                "error" => "User not found"
+                "error" => "ID not found"
             ]);
         }
     }
